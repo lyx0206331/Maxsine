@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--通用背景背景-->
+    <attr name="base_bg" format="color|reference" />
+    <!--通用字体颜色-->
+    <attr name="normal_font_color" format="color|reference" />
+    <!--段号选择背景-->
+    <attr name="segment_bg" format="reference" />
+    <!--段号字体颜色-->
+    <attr name="segment_font_color" format="color|reference" />
+    <!--状态文字颜色-->
+    <attr name="state_font_color" format="color|reference" />
+    <!--重启生效状态颜色图标-->
+    <attr name="reboot_state_icon" format="reference" />
+    <!--立即生效状态颜色图标-->
+    <attr name="immediately_state_icon" format="reference" />
+    <!--只读状态颜色图标-->
+    <attr name="read_only_state_icon" format="reference" />
+    <!--数据表格头部背景-->
+    <attr name="data_grid_head_bg" format="reference" />
+    <!--重启生效状态背景色-->
+    <attr name="reboot_state_bg" format="color|reference" />
+    <!--立即生效状态背景色-->
+    <attr name="immediately_state_bg" format="color|reference" />
+    <!--只读状态背景色-->
+    <attr name="read_only_state_bg" format="color|reference" />
+    <!--漂浮按钮背景-->
+    <attr name="fab_bg" format="color|reference" />
+    <!--漂浮按钮响应颜色-->
+    <attr name="fab_ripple" format="color|reference" />
+    <!--报警提示背景色-->
+    <attr name="warn_point_bg" format="color|reference" />
+    <!--标题颜色-->
+    <attr name="title_color" format="color|reference" />
+    <!--错误码颜色-->
+    <attr name="error_code_color" format="color|reference" />
+    <!--解决方案颜色-->
+    <attr name="solution_color" format="color|reference" />
+    <!--按钮字体颜色-->
+    <attr name="btn_font_color" format="color|reference" />
+    <!--按钮背景色（按下前）-->
+    <attr name="btn_bg_color0" format="color|reference" />
+    <!--按钮背景色（按下后）-->
+    <attr name="btn_bg_color1" format="color|reference" />
+    <!--按钮背景（小）-->
+    <attr name="btn_bg_small" format="color|reference" />
+    <!--按钮背景（大）-->
+    <attr name="btn_bg_normal" format="color|reference" />
+    <!--重启生效背景色-->
+    <attr name="reboot_bg" format="color|reference" />
+    <!--立即生效背景色-->
+    <attr name="immediately_bg" format="color|reference" />
+    <!--只读背景色-->
+    <attr name="read_only_bg" format="color|reference" />
+    <!--周期颜色-->
+    <attr name="period_color" format="color|reference" />
+    <!--分隔线颜色-->
+    <attr name="divider_color" format="color|reference" />
+    <!--自动增益背景色-->
+    <attr name="adjust_bg" format="color|reference" />
+    <!--自动增益标签背景色-->
+    <attr name="adjust_lable_bg" format="color|reference" />
+    <!--自动增益标签字体颜色-->
+    <attr name="adjust_lable_font_color" format="color|reference" />
+    <!--自动增益选择框背景-->
+    <attr name="adjust_checkbox_bg" format="reference" />
+    <!--自动增益选择内容背景-->
+    <attr name="adjust_content_bg" format="reference" />
+    <!--自动增益调整指示器-->
+    <attr name="adjust_indicator" format="reference" />
+    <!--自动增益调整 下移数据-->
+    <attr name="adjust_down_icon" format="reference" />
+    <!--自动增益调整 上移数据-->
+    <attr name="adjust_up_icon" format="reference" />
+    <!--左右半圆背景-->
+    <attr name="semicircle_bg" format="color|reference" />
+    <!--圆角背景-->
+    <attr name="fillet_bg" format="color|reference" />
+    <!--fft背景-->
+    <attr name="fft_bg" format="color|reference" />
+    <!--帮助背景-->
+    <attr name="help_bg" format="color|reference" />
+    <!--对话框背景-->
+    <attr name="dialog_bg" format="color|reference" />
+    <!--默认选中字体颜色-->
+    <attr name="default_pressed_font_color" format="color|reference" />
+    <!--对话框背景色-->
+    <attr name="dialog_bg_color" format="color|reference" />
+    <!--对话框背景边框颜色-->
+    <attr name="dialog_bg_stroke_color" format="color|reference" />
+    <!--左右半圆边框颜色-->
+    <attr name="semicircle_stroke_color" format="color|reference" />
+    <!--气泡拖动进度条 气泡颜色-->
+    <attr name="bubble_seekbar_color" format="color|reference" />
+    <!--气泡拖动进度条 气泡文本颜色-->
+    <attr name="bubble_seekbar_text_color" format="color|reference" />
+    <!--气泡拖动进度条 轨道颜色-->
+    <attr name="bubble_seekbar_track" format="color|reference" />
+    <!--气泡拖动进度条 二级轨道颜色-->
+    <attr name="bubble_seekbar_second_track" format="color|reference" />
+    <!--状态监视内容背景-->
+    <attr name="state_monitor_content_bg" format="reference" />
+    <!--列表条目字体颜色-->
+    <attr name="list_item_font_color" format="color|reference" />
+    <!--FFT标签左圆角背景-->
+    <attr name="fft_label_left_bg" format="reference" />
+    <!--FFT标签右圆角背景-->
+    <attr name="fft_label_right_bg" format="reference" />
+    <!--FFT标签圆角背景-->
+    <attr name="fft_label_fillet_bg" format="reference" />
+    <!--FFT标签左圆角字体颜色-->
+    <attr name="fft_label_left_font_color" format="color|reference" />
+    <!--侧滑菜单头部背景-->
+    <attr name="menu_header_bg" format="reference" />
+    <!--侧滑菜单背景-->
+    <attr name="menu_drawer_bg_color" format="color|reference" />
+    <!--侧滑菜单选中颜色-->
+    <attr name="menu_drawer_selected_color" format="color|reference" />
+    <!--侧滑菜单字体颜色-->
+    <attr name="menu_drawer_text_color" format="color|reference" />
+    <!--侧滑菜单固件升级图标-->
+    <attr name="menu_drawer_update_icon" format="reference" />
+    <!--侧滑菜单状态监视图标-->
+    <attr name="menu_drawer_monitor_icon" format="reference" />
+    <!--侧滑菜单自动增益调整图标-->
+    <attr name="menu_drawer_auto_icon" format="reference" />
+    <!--侧滑菜单FFT图标-->
+    <attr name="menu_drawer_fft_icon" format="reference" />
+    <!--侧滑菜单帮助图标-->
+    <attr name="menu_drawer_help_icon" format="reference" />
+    <!--侧滑菜单关于图标-->
+    <attr name="menu_drawer_about_icon" format="reference" />
+    <!--欢迎界面背景-->
+    <attr name="welcome_bg" format="color|reference" />
+    <!--欢迎界面文字前景色-->
+    <attr name="welcome_text_fg_color" format="color|reference" />
+    <!--欢迎界面文字默认颜色-->
+    <attr name="welcome_text_color" format="color|reference" />
+</resources>

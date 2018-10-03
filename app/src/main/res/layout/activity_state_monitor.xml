@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/base_bg"
+    tools:context="com.adrian.servodriver.activities.StateMonitorActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12.5dp">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/state_monitor"
+            android:textColor="?attr/title_color"
+            android:textSize="@dimen/title_font" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_period"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="?attr/fillet_bg"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/period"
+                android:textColor="?attr/period_color"
+                android:textSize="@dimen/normal_font" />
+
+            <ImageView
+                android:id="@+id/iv_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_period"
+                android:layout_toRightOf="@id/tv_period"
+                android:background="@mipmap/curve" />
+
+            <EditText
+                android:id="@+id/et_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/iv_line"
+                android:layout_alignLeft="@id/iv_line"
+                android:layout_alignRight="@id/iv_line"
+                android:background="@null"
+                android:gravity="center"
+                android:inputType="number"
+                android:singleLine="true"
+                android:text="300"
+                android:textColor="?attr/normal_font_color"
+                android:textSize="@dimen/normal_font" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/et_period"
+                android:text="ms"
+                android:textColor="?attr/period_color"
+                android:textSize="@dimen/normal_font" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_period"
+        android:layout_below="@id/rl_title"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="?attr/state_monitor_content_bg"
+        android:orientation="vertical"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="@string/state_name"
+                android:textColor="?attr/normal_font_color"
+                android:textSize="@dimen/normal_font" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="@string/state_value"
+                android:textColor="?attr/normal_font_color"
+                android:textSize="@dimen/normal_font" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="@string/unit"
+                android:textColor="?attr/normal_font_color"
+                android:textSize="@dimen/normal_font" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ll_header"
+            android:layout_marginBottom="30dp"
+            android:divider="?attr/divider_color"
+            android:dividerHeight="@dimen/divider" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_handler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ll_period"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="-22dp"
+        android:background="@mipmap/lable" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/iv_handler"
+        android:layout_marginRight="50dp"
+        android:background="@mipmap/lable" />
+
+    <Button
+        android:id="@+id/btn_stop_monitor"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:background="?attr/btn_bg_normal"
+        android:text="@string/stop_monitor"
+        android:textColor="?attr/btn_font_color" />
+
+
+</RelativeLayout>

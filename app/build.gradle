@@ -1,0 +1,120 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion setup.compileSdk
+    buildToolsVersion setup.buildTools
+
+    defaultConfig {
+        applicationId "com.adrian.servodriver"
+        minSdkVersion setup.minSdk
+        targetSdkVersion setup.targetSdk
+        versionCode release.versionCode
+        versionName release.versionName
+        flavorDimensions "versionCode"
+
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    signingConfigs {
+        debug {
+            // No debug config
+        }
+
+        release {
+//            storeFile file("/Volumes/MacintoshHD/Android/appkey.keystore")
+//            storePassword "aaaaaaaaaaaa"
+//            keyAlias "bbbbbbbbbbbb"
+//            keyPassword "cccccccccccc"
+        }
+    }
+
+    buildTypes {
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+
+            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+
+            minifyEnabled true
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def fileName = "Maxsine_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                    outputFileName = fileName
+                }
+            }
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    productFlavors {
+
+        default_channel {}
+        wandoujia {}
+        _360 {}
+        yingyongbao {}
+        xiaomi {}
+        baidu {}
+        huawei {}
+        jifeng {}
+        meizu {}
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin_version}"
+    implementation 'com.mikepenz:materialdrawer:6.1.0'
+    // icon fonts used inside the sample
+    // https://github.com/mikepenz/Android-Iconics
+    implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
+    implementation 'com.mikepenz:fontawesome-typeface:5.0.6.0@aar'
+    implementation 'com.mikepenz:octicons-typeface:3.0.0.1@aar'
+    implementation 'com.mikepenz:iconics-core:3.1.0'
+
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+    implementation 'com.github.z3896823:PanelList:v1.1.0.1'
+    implementation 'com.classic.common:multiple-status-view:1.5.1'
+    implementation 'com.github.hotchemi:permissionsdispatcher:4.0.0-alpha1'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:4.0.0-alpha1'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    implementation 'com.ahmadnemati.clickablewebview:clickablewebview:1.1.2'
+    implementation 'org.ccil.cowan.tagsoup:tagsoup:1.2.1'
+    implementation 'com.xw.repo:bubbleseekbar:3.5'
+    implementation 'com.yanzhenjie.nohttp:nohttp:1.1.4'
+    implementation 'com.github.mcxtzhang:PathAnimView:V1.0.0'
+}

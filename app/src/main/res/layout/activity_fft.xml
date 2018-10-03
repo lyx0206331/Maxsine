@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/fft_bg"
+    android:orientation="vertical"
+    tools:context="com.adrian.servodriver.activities.FFTActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12.5dp">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/fft"
+            android:textColor="?attr/title_color"
+            android:textSize="@dimen/title_font" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_chart"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="?attr/fillet_bg"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1.0"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_first_label"
+                android:layout_width="94dp"
+                android:layout_height="74dp"
+                android:background="?attr/fft_label_left_bg"
+                android:gravity="center"
+                android:paddingLeft="4dp"
+                android:text="@string/first_trapper"
+                android:textColor="?attr/fft_label_left_font_color"
+                android:textSize="@dimen/normal_font" />
+
+            <LinearLayout
+                android:id="@+id/ll_fist_trapper"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_toRightOf="@id/tv_first_label"
+                android:background="?attr/fft_label_right_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/p2_00"
+                    android:textColor="?attr/list_item_font_color"
+                    android:textSize="@dimen/normal_font" />
+
+                <com.adrian.servodriver.views.NumSelector
+                    android:id="@+id/ns_p2_00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_p2_01"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_alignLeft="@id/ll_fist_trapper"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ll_fist_trapper"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="?attr/fft_label_fillet_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/p2_01"
+                    android:textColor="?attr/list_item_font_color"
+                    android:textSize="@dimen/normal_font" />
+
+                <com.adrian.servodriver.views.NumSelector
+                    android:id="@+id/ns_p2_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_p2_02"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_alignLeft="@id/ll_fist_trapper"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ll_p2_01"
+                android:layout_marginBottom="10dp"
+                android:background="?attr/fft_label_fillet_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/p2_02"
+                    android:textColor="?attr/list_item_font_color"
+                    android:textSize="@dimen/normal_font" />
+
+                <com.adrian.servodriver.views.NumSelector
+                    android:id="@+id/ns_p2_02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_second_label"
+                android:layout_width="94dp"
+                android:layout_height="74dp"
+                android:layout_below="@id/ll_p2_02"
+                android:background="?attr/fft_label_left_bg"
+                android:gravity="center"
+                android:paddingLeft="4dp"
+                android:text="@string/second_trapper"
+                android:textColor="?attr/fft_label_left_font_color"
+                android:textSize="@dimen/normal_font" />
+
+            <LinearLayout
+                android:id="@+id/ll_second_trapper"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_below="@id/ll_p2_02"
+                android:layout_toRightOf="@id/tv_first_label"
+                android:background="?attr/fft_label_right_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/p2_03"
+                    android:textColor="?attr/list_item_font_color"
+                    android:textSize="@dimen/normal_font" />
+
+                <com.adrian.servodriver.views.NumSelector
+                    android:id="@+id/ns_p2_03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_p2_04"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_alignLeft="@id/ll_fist_trapper"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ll_second_trapper"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="?attr/fft_label_fillet_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/p2_04"
+                    android:textColor="?attr/list_item_font_color"
+                    android:textSize="@dimen/normal_font" />
+
+                <com.adrian.servodriver.views.NumSelector
+                    android:id="@+id/ns_p2_04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_p2_05"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_alignLeft="@id/ll_fist_trapper"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/ll_p2_04"
+                android:layout_marginBottom="10dp"
+                android:background="?attr/fft_label_fillet_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/p2_05"
+                    android:textColor="?attr/list_item_font_color"
+                    android:textSize="@dimen/normal_font" />
+
+                <com.adrian.servodriver.views.NumSelector
+                    android:id="@+id/ns_p2_05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_check"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
+        android:background="?attr/btn_bg_normal"
+        android:text="@string/detection"
+        android:textColor="?attr/btn_font_color"
+        android:textSize="@dimen/normal_font" />
+
+</LinearLayout>

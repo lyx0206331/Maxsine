@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/adjust_bg"
+    android:orientation="vertical"
+    tools:context="com.adrian.servodriver.activities.AutoAdjustActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12.5dp">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/auto_adjust"
+            android:textColor="?attr/title_color"
+            android:textSize="@dimen/title_font" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/tv_rigid"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="?attr/adjust_lable_bg"
+            android:gravity="center"
+            android:text="@string/rigid_hierarchy"
+            android:textColor="?attr/adjust_lable_font_color"
+            android:textSize="@dimen/normal_font" />
+
+        <LinearLayout
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_rigid"
+            android:background="?attr/semicircle_bg">
+
+            <Button
+                android:id="@+id/btn_minus"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:text="-"
+                android:textColor="?attr/adjust_lable_font_color"
+                android:textSize="@dimen/normal_font" />
+
+            <TextView
+                android:id="@+id/tv_level"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:inputType="number"
+                android:singleLine="true"
+                android:text="0"
+                android:textColor="?attr/normal_font_color"
+                android:textSize="@dimen/normal_font" />
+
+            <Button
+                android:id="@+id/btn_plus"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:text="+"
+                android:textColor="?attr/adjust_lable_font_color"
+                android:textSize="@dimen/normal_font" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_inertia_ratio"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:background="?attr/semicircle_bg"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:text="1.0"
+            android:textColor="?attr/normal_font_color"
+            android:textSize="@dimen/normal_font" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/et_inertia_ratio"
+            android:background="?attr/adjust_lable_bg"
+            android:gravity="center"
+            android:text="@string/inertia_ratio"
+            android:textColor="?attr/adjust_lable_font_color"
+            android:textSize="@dimen/normal_font" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="?attr/divider_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <Button
+            android:id="@+id/btn_illation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/transparent"
+            android:text="@string/auto_illation"
+            android:textColor="?attr/adjust_lable_font_color"
+            android:textSize="@dimen/normal_font" />
+
+        <Button
+            android:id="@+id/btn_cal_gain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btn_illation"
+            android:layout_toLeftOf="@id/btn_illation"
+            android:background="@color/transparent"
+            android:text="@string/calcutate_gain"
+            android:textColor="?attr/adjust_lable_font_color"
+            android:textSize="@dimen/normal_font" />
+
+        <Button
+            android:id="@+id/btn_read_param"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btn_illation"
+            android:layout_toRightOf="@id/btn_illation"
+            android:background="@color/transparent"
+            android:text="@string/read_param"
+            android:textColor="?attr/adjust_lable_font_color"
+            android:textSize="@dimen/normal_font" />
+
+        <ImageView
+            android:id="@+id/iv_indicator"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="?attr/adjust_indicator" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/base_bg"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/ll_result"
+                android:layout_width="match_parent"
+                android:layout_height="294dp"
+                android:background="?attr/adjust_content_bg"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calcutate_result"
+                    android:textColor="?attr/adjust_lable_font_color"
+                    android:textSize="@dimen/normal_font" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:text="@string/p0_17"
+                        android:textColor="?attr/period_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <EditText
+                        android:id="@+id/et_p017"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="?attr/semicircle_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text="1.0"
+                        android:textColor="?attr/normal_font_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <CheckBox
+                        android:id="@+id/cb_p017"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="?attr/adjust_checkbox_bg"
+                        android:button="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:text="@string/p0_09"
+                        android:textColor="?attr/period_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <EditText
+                        android:id="@+id/et_p009"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="?attr/semicircle_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text="5"
+                        android:textColor="?attr/normal_font_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <CheckBox
+                        android:id="@+id/cb_p009"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="?attr/adjust_checkbox_bg"
+                        android:button="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:text="@string/p0_05"
+                        android:textColor="?attr/period_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <EditText
+                        android:id="@+id/et_p005"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="?attr/semicircle_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text="5"
+                        android:textColor="?attr/normal_font_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <CheckBox
+                        android:id="@+id/cb_p005"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="?attr/adjust_checkbox_bg"
+                        android:button="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:text="@string/p0_06"
+                        android:textColor="?attr/period_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <EditText
+                        android:id="@+id/et_p006"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="?attr/semicircle_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text="320.0"
+                        android:textColor="?attr/normal_font_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <CheckBox
+                        android:id="@+id/cb_p006"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="?attr/adjust_checkbox_bg"
+                        android:button="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:text="@string/p0_19"
+                        android:textColor="?attr/period_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <EditText
+                        android:id="@+id/et_p019"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="?attr/semicircle_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text="0.50"
+                        android:textColor="?attr/normal_font_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <CheckBox
+                        android:id="@+id/cb_p019"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="?attr/adjust_checkbox_bg"
+                        android:button="@null" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/ib_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ll_result"
+                android:layout_marginBottom="-10dp"
+                android:layout_marginLeft="100dp"
+                android:background="?attr/adjust_down_icon" />
+
+            <ImageButton
+                android:id="@+id/ib_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/ib_down"
+                android:layout_marginRight="100dp"
+                android:background="?attr/adjust_up_icon" />
+
+            <LinearLayout
+                android:id="@+id/ll_content"
+                android:layout_width="match_parent"
+                android:layout_height="294dp"
+                android:layout_below="@id/ll_result"
+                android:layout_marginTop="20dp"
+                android:background="?attr/adjust_content_bg"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dayz_content"
+                    android:textColor="?attr/adjust_lable_font_color"
+                    android:textSize="@dimen/normal_font" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:text="@string/p0_17"
+                        android:textColor="?attr/period_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <EditText
+                        android:id="@+id/et_p017_d"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="?attr/semicircle_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="?attr/normal_font_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <CheckBox
+                        android:id="@+id/cb_p017_d"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="?attr/adjust_checkbox_bg"
+                        android:button="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:text="@string/p0_09"
+                        android:textColor="?attr/period_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <EditText
+                        android:id="@+id/et_p009_d"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="?attr/semicircle_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="?attr/normal_font_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <CheckBox
+                        android:id="@+id/cb_p009_d"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="?attr/adjust_checkbox_bg"
+                        android:button="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:text="@string/p0_05"
+                        android:textColor="?attr/period_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <EditText
+                        android:id="@+id/et_p005_d"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="?attr/semicircle_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="?attr/normal_font_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <CheckBox
+                        android:id="@+id/cb_p005_d"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="?attr/adjust_checkbox_bg"
+                        android:button="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:text="@string/p0_06"
+                        android:textColor="?attr/period_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <EditText
+                        android:id="@+id/et_p006_d"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="?attr/semicircle_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="?attr/normal_font_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <CheckBox
+                        android:id="@+id/cb_p006_d"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="?attr/adjust_checkbox_bg"
+                        android:button="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:text="@string/p0_19"
+                        android:textColor="?attr/period_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <EditText
+                        android:id="@+id/et_p019_d"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="?attr/semicircle_bg"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="?attr/normal_font_color"
+                        android:textSize="@dimen/normal_font" />
+
+                    <CheckBox
+                        android:id="@+id/cb_p019_d"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="?attr/adjust_checkbox_bg"
+                        android:button="@null" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

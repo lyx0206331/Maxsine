@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="picton_blue">#804CC7FD</color>
+    <color name="picton_blue1">#604CC7FD</color>
+    <color name="picton_blue2">#404CC7FD</color>
+    <color name="picton_blue3">#104CC7FD</color>
+    <color name="red_orange">#F94A4B</color>
+    <color name="french_pass">#BFE8FE</color>
+    <color name="reboot_valid">#ACDFFF</color>
+    <color name="rightnow_valid">#FEBEA6</color>
+    <color name="read_only">#B8F8A9</color>
+    <color name="pressed_font">#F89D92</color>
+    <color name="divider">#F0F0F0</color>
+    <color name="normal_font">#85859A</color>
+    <color name="period">#7bb0d8</color>
+
+    <color name="warn_code">#f93755</color>
+    <color name="warn_content">#6464f4</color>
+    <color name="warn_reason">#a04ceb</color>
+    <color name="solution">#ffbc3b</color>
+    <color name="fillet_stroke">#A8E0FB</color>
+    <color name="menu_bg">#F9F9F9</color>
+    <color name="plus">#44E5FE</color>
+    <color name="auto_head">#4FCAFD</color>
+    <color name="ripple">#33728dff</color>
+
+    <color name="base_bg2">#1f272f</color>
+    <color name="normal_font2">#f0f5f3</color>
+    <color name="fft_bg2">#1f272f</color>
+    <color name="adjust_bg2">#274851</color>
+    <color name="semicircle_stroke_color2">#01cecd</color>
+    <color name="divider2">#64717c</color>
+    <color name="fab_bg2">#02cfce</color>
+    <color name="fillet_bg_head2">#406773</color>
+    <color name="fillet_bg2">#333d45</color>
+    <color name="shadow2">#10274851</color>
+    <color name="adjust_label_color2">#3f6672</color>
+    <color name="segment_font2">#12b0b2</color>
+    <color name="state_font_color2">#b8c7d0</color>
+    <color name="bubble_seekbar_color2">#02cfd0</color>
+    <color name="bubble_seekbar_text_color2">#ffffff</color>
+    <color name="bubble_seekbar_track2">#a6afb3</color>
+    <color name="bubble_seekbar_second_track2">#02cfd0</color>
+    <color name="reboot_state_bg2">#75bdbe</color>
+    <color name="immediately_state_bg2">#e37b79</color>
+    <color name="read_only_state_bg2">#83d783</color>
+    <color name="btn_bg2_color0">#2f3740</color>
+    <color name="btn_bg2_color1">#2f3740</color>
+    <color name="btn_stroke2_color">#727982</color>
+    <color name="list_item_font_color2">#b8c7d0</color>
+    <color name="california">#E68C3A</color>
+    <color name="rob_roy">#D6AD4A</color>
+    <color name="metallic_bronze">#524A3A</color>
+    <color name="woodland">#525229</color>
+
+</resources>
